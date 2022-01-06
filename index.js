@@ -143,61 +143,97 @@ console.log(reduce(myreduce,callback6));
 
 //includes()
 
-function includes(arr,target,callback7)
+function includes(arr,target)
 {
     for(let i = 0; i < arr.length; i++)
     {
-        if(callback7(arr[i],target))
+        if(arr[i]===target)
         {
             return true;
         }
     }
     return false;
 }
-function callback7(num,target)
-{
-    return num === target;
-}
 
 let myincludes = [1,2,3,4,5,6,7,8,9,10];
-console.log(includes(arr,3,callback7)); 
+console.log(includes(arr,3)); 
 
 
 //indexOf()
 
-function indexof(arr,target,callback)
+function indexof(arr,target)
 {
     for(let i = 0; i < arr.length; i++)
     {
         if(arr[i] === target)
         {
-            return callback(i);
+            return i;
         }
     }
 
     return -1;
 }
 
-function callback8(index)
-{
-    console.log(index);
-}
 
 let myindexOf = [1,3,4,5,6,7,2,9];
 
-indexof(myindexOf,2,callback8);
+ console.log(indexof(myindexOf,2));
 
 //push()
 
-function push(arr,item,callback)
+function push(arr,item)
 {
     arr[arr.length] = item;
-    callback(arr);
-}
-function callback9(arr)
-{
     console.log(arr)
 }
 
+
 let mypush = ['j','o','e','q','s'];
-push(mypush,'b',callback9);
+push(mypush,'b');
+
+
+//lastIndexOf()
+
+function lastIndexOf(arr,target)
+{
+    for(let i = arr.length; i > 0;i--)
+    {
+        if(arr[i] === target)
+        {
+            return i;
+        }
+    }
+    return -1;
+}
+
+let mylastIndexOf  = [1,1,34,5,6,7,2,1];
+console.log(lastIndexOf(mylastIndexOf,1));
+
+//Object.keys()
+
+function getallKeys(obj)
+{
+    let arr = [];
+    for(let i in obj)
+    {
+        arr.push(i);
+    }
+    return arr;
+}
+
+let obj1 = {name: "jhon", age: 22};
+console.log(getallKeys(obj1));
+
+
+//Object.values()
+function getAllValues(obj)
+{
+    let arr = [];
+    for(let i in obj)
+    {
+        arr.push(obj[i]);
+    }
+    return arr;
+}
+let obj2 = {name: "jhon", age: 22};
+console.log(getAllValues(obj2));
