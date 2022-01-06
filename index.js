@@ -184,12 +184,14 @@ let myindexOf = [1,3,4,5,6,7,2,9];
 function push(arr,item)
 {
     arr[arr.length] = item;
-    console.log(arr)
+    return arr
 }
 
 
 let mypush = ['j','o','e','q','s'];
-push(mypush,'b');
+mypush = push(mypush,'d');
+
+console.log(mypush);
 
 
 //lastIndexOf()
